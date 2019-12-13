@@ -8,7 +8,5 @@ export const StoreProvider = ({ children }) => {
     loginStore: { email: ['neil.peart@rush.yyz'] },
     applicationStore: { firstName: 'neil', lastName: 'peart' }
   })) as StoreType;
-  return (
-    <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
-  );
+  return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>;
 };

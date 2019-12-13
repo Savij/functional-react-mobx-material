@@ -5,15 +5,14 @@ import { StoreContext } from '../../Stores/StoreContext';
 import { StoreType } from '../../Types/StoreType';
 
 const SampleComponent: React.FC = () => {
-  const stores = useContext(StoreContext) as StoreType;
+  const { loginStore, applicationStore } = useContext(StoreContext) as StoreType;
   return (
     <Fragment>
       <Typography variant='h5' color='primary'>
-        Store email: {stores.loginStore.email[0]}
+        Store email: {loginStore.email[0]}
       </Typography>
       <Typography variant='h5' color='secondary'>
-        Other Store Name: {stores.applicationStore.firstName}{' '}
-        {stores.applicationStore.lastName}
+        Other Store Name: {applicationStore.firstName} {applicationStore.lastName}
       </Typography>
     </Fragment>
   );

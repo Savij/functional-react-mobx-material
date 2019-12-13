@@ -11,12 +11,7 @@ const AppHost: React.FC = () => {
     <div className={classes.container}>
       <AppBar position='static'>
         <Toolbar>
-          <Typography
-            data-testid='appBarTest'
-            variant='h6'
-            color='inherit'
-            noWrap
-          >
+          <Typography data-testid='appBarTest' variant='h6' color='inherit' noWrap>
             React-Functional-Mobx-Router-Material-Sample
           </Typography>
         </Toolbar>
