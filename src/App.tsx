@@ -1,26 +1,27 @@
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider, withTheme } from '@material-ui/core/styles';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import { useStyles } from './App.Styles';
+import AppHost from './AppHost/AppHost';
+import { StoreProvider } from './Stores/StoreProvider';
+import { theme } from './Theme';
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const classes = useStyles();
 
-export default App;
+  return (
+    <MuiThemeProvider theme={theme}>
+      <BrowserRouter>
+        <CssBaseline />
+        <StoreProvider>
+          <div className={classes.container}>
+            <AppHost />
+          </div>
+        </StoreProvider>
+      </BrowserRouter>
+    </MuiThemeProvider>
+  );
+};
+
+export default withTheme(App);
